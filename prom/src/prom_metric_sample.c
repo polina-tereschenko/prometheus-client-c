@@ -95,3 +95,8 @@ int prom_metric_sample_set(prom_metric_sample_t *self, double r_value) {
   atomic_store(&self->r_value, r_value);
   return 0;
 }
+
+int prom_metric_sample_get(prom_metric_sample_t *self) {
+  PROM_ASSERT(self != NULL);
+  return atomic_load(&self->r_value);
+}
