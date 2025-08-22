@@ -57,13 +57,4 @@ int prom_metric_sample_sub(prom_metric_sample_t *self, double r_value);
  */
 int prom_metric_sample_set(prom_metric_sample_t *self, double r_value);
 
-/**
- * @brief Get the r_value of the sample.
- *
- * This operation MUST be called to get the metric value.
- * @param self The target prom_metric_sample_t*
- * @return The current metric value 
- */
-int prom_metric_sample_get(prom_metric_sample_t *self);
-
 #endif  // PROM_METRIC_SAMPLE_H

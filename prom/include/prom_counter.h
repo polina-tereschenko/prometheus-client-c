@@ -100,4 +100,16 @@ int prom_counter_inc(prom_counter_t *self, const char **label_values);
  */
 int prom_counter_add(prom_counter_t *self, double r_value, const char **label_values);
 
+/**
+ * @brief Get the value to the prom_counter_t*. A non-zero integer value will be returned on failure.
+ * @param self The target  prom_counter_t*
+ * @param r_value The double to add to the prom_counter_t passed as self. The value MUST be greater than or equal to 0.
+ * @param label_values The label values associated with the metric sample being updated. The number of labels must
+ *                     match the value passed to label_key_count in the counter's constructor. If no label values are
+ *                     necessary, pass NULL. Otherwise, It may be convenient to pass this value as a literal.
+ * @param param_value stores r_value value.
+ * @return A non-zero integer value upon failure.
+ */
+int prom_metric_sample_get(prom_metric_sample_t *self);
+
 #endif  // PROM_COUNTER_H
