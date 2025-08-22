@@ -107,9 +107,8 @@ int prom_counter_add(prom_counter_t *self, double r_value, const char **label_va
  * @param label_values The label values associated with the metric sample being updated. The number of labels must
  *                     match the value passed to label_key_count in the counter's constructor. If no label values are
  *                     necessary, pass NULL. Otherwise, It may be convenient to pass this value as a literal.
- * @param param_value stores r_value value.
- * @return A non-zero integer value upon failure.
+ * @return The current metric value.
  */
-int prom_metric_sample_get(prom_metric_sample_t *self);
+int prom_metric_sample_get(prom_metric_sample_t *self, const char **label_values);
 
 #endif  // PROM_COUNTER_H
